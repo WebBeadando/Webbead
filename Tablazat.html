@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+	<meta charset="utf-8">
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" class="active">Fő menü</a></li>
+			<li><a href="Tablazat.html">Táblázat menü</a></li>
+			<li><a href="HTML5.html">HTML5 menü</a></li>
+			<li><a href="ChartJS.html">ChartJS</a></li>
+			<li><a href="AJAX.html">Ajax menü</a></li>
+			<li><a href="OOJS.html">OOJS menü</a></li>
+		</ul>
+	</nav>
+	<aside>
+		<h1>Táblázat menü</h1>
+	</aside>
+	<hr>
+	<div class="employee-form">
+		<form onsubmit="event.preventDefault();onFormSubmit();">
+			<div>
+				<label>Teljes név*</label><label class="validation-error hide" id="fullNameValidationError">Ez a mező kötelező</label>
+				<input type="text" name="fullName" id="fullName">
+			</div>
+			<div>
+				<label>Email cím</label>
+				<input type="text" name="email" id="email">
+			</div>
+			<div>
+				<label>Fizetés</label>
+				<input type="text" name="salary" id="salary">
+			</div>
+			<div>
+				<label>Város</label>
+				<input type="text" name="city" id="city">
+			</div>
+			<div class="form-action-buttons">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+	</br>
+	<div class="employees-table">
+		<table class="list" id="employeeList">
+			<thead>
+				<tr>
+					<td>Teljesnév</td>
+					<td>Email cím</td>
+					<td>Fizetés</td>
+					<td>Város</td>
+				</tr>
+			</thead>
+			<tbody>
+			
+			</tbody>
+		</table>
+	</div>
+	<script src="script.js"></script>
+	<footer>Bódi Bálint Dávid-KLNK5L</footer>
+</body>
+</html>
