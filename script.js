@@ -1,3 +1,4 @@
+//1.feladat
 var selectedIndex=null;
 var array=new Array();
 function onFormSubmit() {
@@ -22,7 +23,7 @@ function readFormData() {
 	printArray();
 }
 function printArray() {
-	var table=document.getElementById("employeeList").getElementsByTagName("tbody")[0];
+	var table=document.getElementById("employeeList").getElementsByTagName('tbody')[0];
 	table.innerHTML=" ";
 	var newRow;
 	for(i=0;i<array.length;i++) {
@@ -81,4 +82,63 @@ function validate() {
             document.getElementById("fullNameValidationError").classList.add("hide"); 
     } 
     return isValid; 
-} 
+}
+//2.feladat
+function sortTable(column) {
+    var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
+    var rows = Array.from(table.rows);
+    
+    var isNumeric = column === "salary";
+    
+    rows.sort((rowA, rowB) => {
+        let cellA = rowA.cells[column].innerText.toLowerCase();
+        let cellB = rowB.cells[column].innerText.toLowerCase();
+        
+        if (isNumeric) {
+            return parseFloat(cellA) - parseFloat(cellB);
+        }
+        return cellA.localeCompare(cellB);
+    });
+
+    table.innerHTML = "";
+    rows.forEach(row => table.appendChild(row));
+}
+
+function sortName() {
+    sortTable(0);
+}
+
+function sortEmail() {
+    sortTable(1);
+}
+
+function sortSalary() {
+    sortTable(2);
+}
+
+function sortCity() {
+    sortTable(3);
+}
+
+function filterTable() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toLowerCase();
+    table = document.getElementById("employeeList").getElementsByTagName("tbody")[0];
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        let rowVisible = false;
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toLowerCase().includes(filter)) {
+                    rowVisible = true;
+                    break;
+                }
+            }
+        }
+        tr[i].style.display = rowVisible ? "" : "none";
+    }
+}		

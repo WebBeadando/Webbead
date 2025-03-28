@@ -6,22 +6,25 @@
 </head>
 <body>
 	<header>
-		<h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
+		<h1 class="header">Táblázat menü</h1>
 	</header>
 	<nav>
 		<ul>
-			<li><a href="index.html" class="active">Fő menü</a></li>
-			<li><a href="Tablazat.html">Táblázat menü</a></li>
+			<li><a href="index.html">Fő menü</a></li>
+			<li><a href="Tablazat.html"class="active">Táblázat menü</a></li>
 			<li><a href="HTML5.html">HTML5 menü</a></li>
 			<li><a href="ChartJS.html">ChartJS</a></li>
 			<li><a href="AJAX.html">Ajax menü</a></li>
 			<li><a href="OOJS.html">OOJS menü</a></li>
 		</ul>
 	</nav>
-	<aside>
-		<h1>Táblázat menü</h1>
-	</aside>
 	<hr>
+    <p>Név alapján sorba rendezés:<button onclick="sortName()">Rendez</button></p>
+	<p>Email alapján sorba rendezés:<button onclick="sortEmail()">Rendez</button></p> 
+	<p>Fizetés alapján sorba rendezés:<button onclick="sortSalary()">Rendez</button></p> 
+	<p>Város alapján sorba rendezés:<button onclick="sortCity()">Rendez</button></p> 
+	<p>Keresés: <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Kérek egy szöveget..."></p>
+    <table id="myTable">
 	<div class="employee-form">
 		<form onsubmit="event.preventDefault();onFormSubmit();">
 			<div>
@@ -50,10 +53,10 @@
 		<table class="list" id="employeeList">
 			<thead>
 				<tr>
-					<td>Teljesnév</td>
-					<td>Email cím</td>
-					<td>Fizetés</td>
-					<td>Város</td>
+					<th>Teljesnév</th>
+					<th>Email cím</th>
+					<th>Fizetés</th>
+					<th>Város</th>
 				</tr>
 			</thead>
 			<tbody>
