@@ -18,9 +18,17 @@
 			<li><a href="OOJS.html">OOJS menü</a></li>
 		</ul>
 	</nav>
-	<aside>
-		<h1></h1>
-	</aside>
-	<footer>Bódi Bálint Dávid-KLNK5L</footer>
+	<script type="text/javascript"> 
+		if( sessionStorage.hits ) 
+			sessionStorage.hits = Number(sessionStorage.hits) +1; 
+		else 
+			sessionStorage.hits = 1; 
+		document.write("Ennyiszer frissítette az oldalt :" + sessionStorage.hits ); 
+	</script> 
+	<p>Frissítse az oldalt a találatok számának növelése érdekében.</p> 
+	<p>Az oldal bezárásával és újboli megnyitásával visszaállítja a számot 1-re.</p> 
+	<input type="button" onclick="bigLoop();" value="Hosszú ciklus"> 
+  <input type="button" onclick="sayHello();" value="Csak egy üdvözlés">
+  <footer>Bódi Bálint Dávid-KLNK5L</footer>
 </body>
 </html>

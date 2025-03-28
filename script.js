@@ -141,4 +141,18 @@ function filterTable() {
         }
         tr[i].style.display = rowVisible ? "" : "none";
     }
-}		
+}
+//3.feladat		
+function bigLoop(){ 
+    if (typeof(Worker) !== "undefined") { 
+     var worker = new Worker('bigLoop.js'); 
+     worker.onmessage = function (event) { 
+      alert("Lefutott " + event.data + " ismétlés" ); 
+     }; 
+    } else { 
+     alert("Sorry, your browser does not support Web Workers..." ); 
+    } 
+   } 
+   function sayHello(){ 
+    alert("Hahó...." ); 
+   } 
