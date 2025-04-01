@@ -144,15 +144,40 @@ function filterTable() {
 }
 //3.feladat		
 function bigLoop(){ 
-    if (typeof(Worker) !== "undefined") { 
-     var worker = new Worker('bigLoop.js'); 
-     worker.onmessage = function (event) { 
-      alert("Lefutott " + event.data + " ismétlés" ); 
-     }; 
-    } else { 
-     alert("Sorry, your browser does not support Web Workers..." ); 
+    for (var i = 0; i <= 1000000; i += 1)   
+		var j = i; 
+		alert("A hosszúciklus " + j + " ismétlése lefutott" ); 
+} 
+function sayHello(){ 
+alert("Szia Uram" ); 
+   }
+   
+//Drag and drop api
+function allowDrop(event) { 
+	event.preventDefault(); 
+} 
+function drag(event) { 
+	event.dataTransfer.setData("text", event.target.id); 
+} 
+function drop(event) { 
+	event.preventDefault();
+	var data = event.dataTransfer.getData("text");
+	var draggedElement = document.getElementById(data);
+	if (event.target.id === "div1" || event.target.closest("#div1")) {
+        event.target.appendChild(draggedElement);
     } 
-   } 
-   function sayHello(){ 
-    alert("Hahó...." ); 
-   } 
+} 
+//canvas
+function drawShape(){ 
+	var canvas = document.getElementById('mycanvas'); 
+	if (canvas.getContext){ 
+		var ctx = canvas.getContext('2d'); 	 
+		ctx.fillRect(25,25,100,100);
+		ctx.clearRect(45,45,60,60); 
+		ctx.strokeRect(50,50,50,50); 
+	} 
+	else  
+	alert('Your browser doesn\'t support Canvas.'); 
+	
+} 
+//width="200px" height="200px"

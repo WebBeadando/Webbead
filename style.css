@@ -36,3 +36,5 @@ a:hover{background-color:#ff3300}
 li{
 	display:inline;
 }
+#div1 {width:400px;height:300px;padding:10px;border:1px solid #aaaaaa;display: flex; align-items:center;justify-content:center;} 
+#mycanvas{width: 200px; height:100px;display:flex;justify-content:flex-end;} 
