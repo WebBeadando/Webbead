@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="style.css">
+	<script src="ajax.js" defer></script>
 </head>
 <body>
 	<header>
@@ -18,6 +19,33 @@
 			<li><a href="OOJS.html">OOJS menü</a></li>
 		</ul>
 	</nav>
+	<main>
+		<h2>Adatok lekérdezése</h2>
+		<button onclick="getData()">Lekérés</button>
+		<div id="dataList"></div>
+		<div id="stats"></div>
+
+		<h2>Új adat felvitele</h2>
+		<input type="text" id="createName" placeholder="Név">
+		<input type="text" id="createHeight" placeholder="Magasság">
+		<input type="text" id="createWeight" placeholder="Súly">
+		<button onclick="createData()">Létrehozás</button>
+		<p id="createMsg"></p>
+
+		<h2>Adat módosítása</h2>
+		<input type="text" id="updateId" placeholder="ID">
+		<button onclick="getDataForId()">Adatok betöltése</button><br>
+		<input type="text" id="updateName" placeholder="Név">
+		<input type="text" id="updateHeight" placeholder="Magasság">
+		<input type="text" id="updateWeight" placeholder="Súly">
+		<button onclick="updateData()">Módosítás</button>
+		<p id="updateMsg"></p>
+
+		<h2>Adat törlése</h2>
+		<input type="text" id="deleteId" placeholder="ID">
+		<button onclick="deleteData()">Törlés</button>
+		<p id="deleteMsg"></p>
+	</main>
 	<footer>Bódi Bálint Dávid-KLNK5L</footer>
 </body>
 </html>
