@@ -177,7 +177,46 @@ function drawShape(){
 		ctx.strokeRect(50,50,50,50); 
 	} 
 	else  
-	alert('Your browser doesn\'t support Canvas.'); 
+	alert('Your browser doesnt support Canvas.'); 
 	
 } 
-//width="200px" height="200px"
+
+//4.feladat
+window.addEventListener("load", function () {
+    const table = document.getElementById("numberTable");
+    const ctx = document.getElementById("lineChart").getContext("2d");
+    let chart = null;
+
+    Array.from(table.querySelectorAll("tr")).forEach((row, rowIndex) => {
+        row.addEventListener("click", () => {
+            const values = Array.from(row.querySelectorAll("td")).map(td => Number(td.innerText));
+            const labels = values.map((_, i) => `Oszlop ${i + 1}`);
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: `Sor ${rowIndex + 1} adatai`,
+                        data: values,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: true },
+                        title: { display: true, text: 'Vonaldiagram - Táblázat sorai alapján' }
+                    }
+                }
+            });
+        });
+    });
+});	
