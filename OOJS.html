@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="style.css">
+	
 </head>
 <body>
 	<header>
@@ -18,6 +19,30 @@
 			<li><a href="OOJS.html"class="active">OOJS menü</a></li>
 		</ul>
 	</nav>
+
+	<table>
+		<tr>
+			<td align="right">x:</td><td><input type="text" id="x" name="x" value="100"></td>
+			<td align="right">y:</td><td><input type="text" id="y" name="y" value="100"></td>
+			<td><button onclick="myimage.putAt(x.value, y.value)">Áthelyezés</button></td>
+		</tr>
+		<tr>
+			<td align="right">szélesség:</td><td><input type="text" id="width" name="width" value="200"></td>
+			<td align="right">magasság:</td><td><input type="text" id="height" name="height" value="200"></td>
+			<td><button onclick="myimage.resize(width.value, height.value)">Átméretez</button></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td><td><button onclick="myimage.show()">Mutat</button></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td><td><button onclick="myimage.hide()">Elrejt</button></td>
+		</tr>
+	</table>
+	<script src="OOJs.js"></script>
+
+	<script>
+		window.myimage = new SubtitledImage("mz.jpg", 100, 100, 200, 200, "MZ ETZ 125");
+	</script>
 	<footer>Bódi Bálint Dávid-KLNK5L</footer>
 </body>
 </html>
