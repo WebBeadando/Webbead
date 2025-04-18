@@ -6,7 +6,7 @@
 </head>
 <body>
 	<header>
-		<h1 class="header">Táblázat menü</h1>
+		<h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
 	</header>
 	<nav>
 		<ul>
@@ -18,30 +18,36 @@
 			<li><a href="OOJS.html">OOJS menü</a></li>
 		</ul>
 	</nav>
+	
+	<main>
 	<hr>
-    <p>Név alapján sorba rendezés:<button onclick="sortName()">Rendez</button></p>
-	<p>Email alapján sorba rendezés:<button onclick="sortEmail()">Rendez</button></p> 
-	<p>Fizetés alapján sorba rendezés:<button onclick="sortSalary()">Rendez</button></p> 
-	<p>Város alapján sorba rendezés:<button onclick="sortCity()">Rendez</button></p> 
+    <p>Név alapján sorba rendezés:</p><button class ="gomb" onclick="sortName()">Rendez</button>
+	<p>Email alapján sorba rendezés:</p><button class ="gomb" onclick="sortEmail()">Rendez</button> 
+	<p>Fizetés alapján sorba rendezés:</p><button class ="gomb" onclick="sortSalary()">Rendez</button> 
+	<p>Város alapján sorba rendezés:</p> <button class ="gomb" onclick="sortCity()">Rendez</button>
 	<p>Keresés: <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Kérek egy szöveget..."></p>
     <table id="myTable">
 		<div class="employee-form">
 			<form onsubmit="event.preventDefault();onFormSubmit();">
 				<div>
-					<label>Teljes név*</label><label class="validation-error hide" id="fullNameValidationError">Ez a mező kötelező</label>
+					<label>Teljes név*</label>
 					<input type="text" name="fullName" id="fullName">
+					<label class="validation-error hide" id="fullNameValidationError">Ez a mező kötelező</label>
 				</div>
 				<div>
-					<label>Email cím</label>
+					<label>Email cím*</label>
 					<input type="text" name="email" id="email">
+					<label class="validation-error hide" id="fullNameValidationError">Ez a mező kötelező</label>
 				</div>
 				<div>
-					<label>Fizetés</label>
+					<label>Fizetés*</label>
 					<input type="text" name="salary" id="salary">
+					<label class="validation-error hide" id="fullNameValidationError">Ez a mező kötelező</label>
 				</div>
 				<div>
-					<label>Város</label>
+					<label>Város*</label>
 					<input type="text" name="city" id="city">
+					<label class="validation-error hide" id="fullNameValidationError">Ez a mező kötelező</label>
 				</div>
 				<div class="form-action-buttons">
 					<input type="submit" value="Submit">
@@ -65,7 +71,10 @@
 			</tbody>
 		</table>
 	</div>
+	</main>
 	<script src="script.js"></script>
-	<footer>Bódi Bálint Dávid-KLNK5L</footer>
+	<aside>
+		<footer>Bódi Bálint Dávid-KLNK5L</footer>
+	</aside>
 </body>
 </html>

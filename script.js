@@ -1,4 +1,4 @@
-//1.feladat
+//2.feladat
 var selectedIndex=null;
 var array=new Array();
 function onFormSubmit() {
@@ -37,7 +37,7 @@ function printArray() {
 		cell4=newRow.insertCell(3);
 		cell4.innerHTML=array[i].city;
 		cell4=newRow.insertCell(4);
-		cell4.innerHTML='<a onClick="onEdit('+i+')">Edit</a>'+'<a onClick="onDelete('+i+')">Delete</a>';
+		cell4.innerHTML='<a class="btned" onClick="onEdit('+i+')">Edit</a>'+'<a class="btndel" onClick="onDelete('+i+')">Delete</a>';
 		
 	}
 }
@@ -81,6 +81,30 @@ function validate() {
 	   if (!document.getElementById("fullNameValidationError").classList.contains("hide")) 
             document.getElementById("fullNameValidationError").classList.add("hide"); 
     } 
+		if (document.getElementById("email").value == "") { 
+        isValid = false; 
+		document.getElementById("fullNameValidationError").classList.remove("hide"); 
+    } else { 
+	isValid = true; 
+	   if (!document.getElementById("fullNameValidationError").classList.contains("hide")) 
+            document.getElementById("fullNameValidationError").classList.add("hide"); 
+    }
+		if (document.getElementById("salary").value == "") { 
+        isValid = false; 
+		document.getElementById("fullNameValidationError").classList.remove("hide"); 
+    } else { 
+	isValid = true; 
+	   if (!document.getElementById("fullNameValidationError").classList.contains("hide")) 
+            document.getElementById("fullNameValidationError").classList.add("hide"); 
+    }
+		if (document.getElementById("city").value == "") { 
+        isValid = false; 
+		document.getElementById("fullNameValidationError").classList.remove("hide"); 
+    } else { 
+	isValid = true; 
+	   if (!document.getElementById("fullNameValidationError").classList.contains("hide")) 
+            document.getElementById("fullNameValidationError").classList.add("hide"); 
+    }
     return isValid; 
 }
 //2.feladat
